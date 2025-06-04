@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md. Sabbir Al Ahsan - Aspiring PhD Student</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter (for primary text) and Playfair Display (for headings - optional, but adds elegance) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif; /* Apply to headings for a more professional look */
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e0e0e0; /* Lighter track */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+            cursor: pointer;
+        }
+
+        /* Keyframe for fade-in-up animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0; /* Hidden by default */
+        }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-600 { animation-delay: 0.6s; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-lg fixed w-full z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-3xl font-extrabold text-indigo-700 hover:text-indigo-900 transition-colors duration-300">Sabbir</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-700 hover:text-indigo-700 font-medium transition-colors duration-300 relative group">Home<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-700 group-hover:w-full transition-all duration-300"></span></a>
+                <a href="#about" class="text-gray-700 hover:text-indigo-700 font-medium transition-colors duration-300 relative group">About<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-700 group-hover:w-full transition-all duration-300"></span></a>
+                <a href="#research" class="text-gray-700 hover:text-indigo-700 font-medium transition-colors duration-300 relative group">Research<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-700 group-hover:w-full transition-all duration-300"></span></a>
+                <a href="#publications" class="text-gray-700 hover:text-indigo-700 font-medium transition-colors duration-300 relative group">Publications<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-700 group-hover:w-full transition-all duration-300"></span></a>
+                <a href="#teaching" class="text-gray-700 hover:text-indigo-700 font-medium transition-colors duration-300 relative group">Teaching<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-700 group-hover:w-full transition-all duration-300"></span></a>
+                <a href="#skills" class="text-gray-700 hover:text-indigo-700 font-medium transition-colors duration-300 relative group">Skills<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-700 group-hover:w-full transition-all duration-300"></span></a>
+                <a href="#contact" class="text-gray-700 hover:text-indigo-700 font-medium transition-colors duration-300 relative group">Contact<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-700 group-hover:w-full transition-all duration-300"></span></a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none p-2 rounded-md hover:bg-gray-100 transition-colors duration-300">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-white bg-opacity-95 z-40 flex flex-col items-center justify-center space-y-8 animate-fade-in-up">
+            <button id="close-mobile-menu" class="absolute top-6 right-6 text-gray-700 focus:outline-none p-2 rounded-md hover:bg-gray-100 transition-colors duration-300">
+                <i class="fas fa-times text-3xl"></i>
+            </button>
+            <a href="#home" class="text-gray-800 text-3xl font-semibold hover:text-indigo-700 transition-colors duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Home</a>
+            <a href="#about" class="text-gray-800 text-3xl font-semibold hover:text-indigo-700 transition-colors duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">About</a>
+            <a href="#research" class="text-gray-800 text-3xl font-semibold hover:text-indigo-700 transition-colors duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Research</a>
+            <a href="#publications" class="text-gray-800 text-3xl font-semibold hover:text-indigo-700 transition-colors duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Publications</a>
+            <a href="#teaching" class="text-gray-800 text-3xl font-semibold hover:text-indigo-700 transition-colors duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Teaching</a>
+            <a href="#skills" class="text-gray-800 text-3xl font-semibold hover:text-indigo-700 transition-colors duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Skills</a>
+            <a href="#contact" class="text-gray-800 text-3xl font-semibold hover:text-indigo-700 transition-colors duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Contact</a>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section id="home" class="bg-gradient-to-br from-indigo-700 to-purple-800 text-white py-24 md:py-40 flex items-center min-h-screen-minus-header relative overflow-hidden">
+            <div class="absolute inset-0 bg-pattern opacity-10"></div> <!-- Subtle background pattern -->
+            <div class="container mx-auto px-6 text-center relative z-10">
+                <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight animate-fade-in-up">Hello, I'm Md. Sabbir Al Ahsan.</h1>
+                <p class="text-xl md:text-3xl font-light mb-10 animate-fade-in-up delay-200">Lecturer at East Delta University & Aspiring PhD Student in Computer Science.</p>
+                <div class="flex flex-col md:flex-row justify-center items-center space-y-5 md:space-y-0 md:space-x-6">
+                    <a href="CV_Md__Sabbir_Al_Ahsan.pdf" target="_blank" class="bg-white text-indigo-700 px-10 py-4 rounded-full shadow-xl hover:bg-gray-100 hover:scale-105 transition-all duration-300 font-bold text-lg animate-fade-in-up delay-400">Download CV</a>
+                    <a href="#contact" class="border-2 border-white text-white px-10 py-4 rounded-full shadow-xl hover:bg-white hover:text-indigo-700 hover:scale-105 transition-all duration-300 font-bold text-lg animate-fade-in-up delay-600">Get In Touch</a>
+                </div>
+                <div class="mt-16 flex justify-center space-x-8 animate-fade-in-up delay-800">
+                    <a href="https://github.com/mdsabbirahsan" target="_blank" class="text-white hover:text-gray-300 transition-colors duration-300 text-4xl"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/sabbir-al-ahsan" target="_blank" class="text-white hover:text-gray-300 transition-colors duration-300 text-4xl"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" target="_blank" class="text-white hover:text-gray-300 transition-colors duration-300 text-4xl"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank" class="text-white hover:text-gray-300 transition-colors duration-300 text-4xl"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 md:py-32 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-16">About Me</h2>
+                <div class="flex flex-col md:flex-row items-center md:space-x-16">
+                    <div class="md:w-1/3 mb-12 md:mb-0 transform hover:scale-105 transition-transform duration-300">
+                        <img src="https://placehold.co/400x400/D1C4E9/673AB7?text=Your+Photo" alt="Md. Sabbir Al Ahsan Photo" class="rounded-full shadow-2xl mx-auto w-72 h-72 object-cover border-4 border-indigo-200">
+                    </div>
+                    <div class="md:w-2/3 text-center md:text-left">
+                        <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                            I am Md. Sabbir Al Ahsan, a dedicated Lecturer in the Department of Computer Science & Engineering at East Delta University, Chattogram. My academic journey includes pursuing an M.Sc. in CSE at Chittagong University of Engineering & Technology (CUET), where my ongoing thesis explores a novel framework for hotel recommendation systems through multimodal analysis.
+                        </p>
+                        <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                            My core research interests lie at the intersection of **Machine Learning, Deep Learning, Computer Vision, Big Data Analytics, and Natural Language Processing**. I am passionately committed to advancing these fields and am actively seeking challenging PhD opportunities in Computer Science in the USA to expand my research horizons and contribute meaningfully to the academic community.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8 text-left text-lg">
+                            <p class="text-gray-700"><strong class="text-gray-900">Name:</strong> Md. Sabbir Al Ahsan</p>
+                            <p class="text-gray-700"><strong class="text-gray-900">Email:</strong> <a href="mailto:sabbir.shantocse@gmail.com" class="text-indigo-600 hover:underline transition-colors duration-300">sabbir.shantocse@gmail.com</a></p>
+                            <p class="text-gray-700"><strong class="text-gray-900">Current Role:</strong> Lecturer, Dept. of CSE, East Delta University</p>
+                            <p class="text-gray-700"><strong class="text-gray-900">Location:</strong> Jessore, Bangladesh</p>
+                            <p class="text-gray-700"><strong class="text-gray-900">IELTS Score:</strong> 7.0 (L: 7.5 | S: 7.5 | R: 6.0 | W: 6.5)</p>
+                        </div>
+                        <div class="mt-12 text-center md:text-left">
+                            <a href="CV_Md__Sabbir_Al_Ahsan.pdf" target="_blank" class="bg-indigo-600 text-white px-10 py-4 rounded-full shadow-lg hover:bg-indigo-700 hover:scale-105 transition-all duration-300 font-bold text-lg">View Full CV</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Interests Section -->
+        <section id="research" class="py-20 md:py-32 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-16">Research Interests & Academic Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <!-- Research Interest Card -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-2">
+                        <i class="fas fa-flask text-5xl text-indigo-600 mb-6 block text-center"></i>
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Core Research Areas</h3>
+                        <ul class="space-y-4 text-gray-700 text-lg">
+                            <li><i class="fas fa-check-circle text-green-500 mr-3"></i>Machine Learning</li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-3"></i>Deep Learning</li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-3"></i>Computer Vision</li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-3"></i>Big Data Analytics</li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-3"></i>Natural Language Processing</li>
+                        </ul>
+                    </div>
+                    <!-- Academic Project Card 1 -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-2">
+                        <i class="fas fa-graduation-cap text-5xl text-purple-600 mb-6 block text-center"></i>
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4 text-center">M.Sc. Thesis (Ongoing)</h3>
+                        <p class="text-gray-700 mb-4 text-lg font-medium">"Developing a Framework for Hotel Recommendation System Using Multiple Features"</p>
+                        <ul class="list-disc list-inside text-gray-700 text-base space-y-2">
+                            <li>Combines user reviews and hotel images using a co-attention-based multimodal recommendation system.</li>
+                            <li>Supervisor: <span class="font-semibold">Dr. Mohammad Shamsul Arefin</span></li>
+                        </ul>
+                    </div>
+                    <!-- Academic Project Card 2 -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-2">
+                        <i class="fas fa-code-branch text-5xl text-blue-600 mb-6 block text-center"></i>
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Key Academic Projects</h3>
+                        <ul class="space-y-4 text-gray-700 text-lg">
+                            <li><i class="fas fa-project-diagram text-green-500 mr-3"></i>Covid-19 Analysis using Hadoop and Apache Spark</li>
+                            <li><i class="fas fa-project-diagram text-green-500 mr-3"></i>Drowsiness Detection using Deep Learning Models</li>
+                            <li><i class="fas fa-project-diagram text-green-500 mr-3"></i>Fabric Defect Detection using Convolutional Neural Network</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications" class="py-20 md:py-32 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-16">Publications & Presentations</h2>
+                <div class="space-y-10">
+                    <!-- Publication 1 -->
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-lg border-l-4 border-indigo-600 transform hover:scale-[1.01] transition-transform duration-300">
+                        <h3 class="text-xl md:text-2xl font-semibold text-gray-800 mb-3">1. An Ensemble Deep Learning Framework for Two-Stage Diabetic Retinopathy Diagnosis and Severity Screening</h3>
+                        <p class="text-gray-700 mb-2 text-lg">Ahmed Noorim, Raina Nusrat Jahan, <span class="font-bold">Md. Sabbir Al Ahsan</span>, Sourav Adhikary, and Md. Jamil Uddin</p>
+                        <p class="text-gray-600 text-base italic">10th International Conference on ICT for Intelligent Systems, New York, USA (ICTIS-2025) (Accepted) - Will be published in the Springer proceedings (SIST Book Series)</p>
+                    </div>
+                    <!-- Publication 2 -->
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-lg border-l-4 border-purple-600 transform hover:scale-[1.01] transition-transform duration-300">
+                        <h3 class="text-xl md:text-2xl font-semibold text-gray-800 mb-3">2. A Framework for Identifying Influential People by Analyzing Social Media Data</h3>
+                        <p class="text-gray-700 mb-2 text-lg"><span class="font-bold">Md. Sabbir Al Ahsan</span>, Mohammad Shamsul Arefin, A. S. M. Kayes, Mohammad Hammoudeh, Omar Aldabbas</p>
+                        <p class="text-gray-600 text-base italic">Applied Sciences, MDPI, Volume 10, Issue 24, December 2020 <a href="https://www.mdpi.com/2076-3417/10/24/8991" target="_blank" class="text-indigo-600 hover:underline font-medium ml-2">[Paper Link]</a></p>
+                    </div>
+                    <!-- Symposium Presentation 1 -->
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-lg border-l-4 border-blue-600 transform hover:scale-[1.01] transition-transform duration-300">
+                        <h3 class="text-xl md:text-2xl font-semibold text-gray-800 mb-3">Symposium Presentation: Weather Prediction Model using Machine Learning Algorithm and Apache Spark Framework</h3>
+                        <p class="text-gray-700 mb-2 text-lg">Presented at the 1st National Workshop on Big Data and Machine Learning (BDML), 2020</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Teaching Experience Section -->
+        <section id="teaching" class="py-20 md:py-32 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-16">Teaching Experience & Seminars</h2>
+                <div class="overflow-x-auto rounded-xl shadow-xl border border-gray-200">
+                    <table class="min-w-full bg-white">
+                        <thead>
+                            <tr class="bg-indigo-600 text-white">
+                                <th class="py-4 px-6 text-left text-base font-semibold uppercase tracking-wider rounded-tl-xl">Role</th>
+                                <th class="py-4 px-6 text-left text-base font-semibold uppercase tracking-wider">Affiliation</th>
+                                <th class="py-4 px-6 text-left text-base font-semibold uppercase tracking-wider">Course</th>
+                                <th class="py-4 px-6 text-left text-base font-semibold uppercase tracking-wider rounded-tr-xl">Class Size</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="hover:bg-gray-50 transition-colors duration-200">
+                                <td class="py-4 px-6 whitespace-nowrap text-gray-800">Instructor</td>
+                                <td class="py-4 px-6 whitespace-nowrap text-gray-700">EDGE Bangladesh (Govt. of Bangladesh, World Bank-funded Project)</td>
+                                <td class="py-4 px-6 whitespace-nowrap text-gray-700">Basic programming with Python</td>
+                                <td class="py-4 px-6 whitespace-nowrap text-gray-700">30</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors duration-200">
+                                <td class="py-4 px-6 whitespace-nowrap text-gray-800">Instructor</td>
+                                <td class="py-4 px-6 whitespace-nowrap text-gray-700">East Delta University</td>
+                                <td class="py-4 px-6 whitespace-nowrap text-gray-700">Algorithms</td>
+                                <td class="py-4 px-6 whitespace-nowrap text-gray-700">35</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors duration-200">
+                                <td class="py-4 px-6 whitespace-nowrap text-gray-800">Instructor</td>
+                                <td class="py-4 px-6 whitespace-nowrap text-gray-700">East Delta University</td>
+                                <td class="py-4 px-6 whitespace-nowrap text-gray-700">Object Oriented Programming (Java)</td>
+                                <td class="py-4 px-6 whitespace-nowrap text-gray-700">35</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors duration-200">
+                                <td class="py-4 px-6 whitespace-nowrap text-gray-800">Instructor</td>
+                                <td class="py-4 px-6 whitespace-nowrap text-gray-700">East Delta University</td>
+                                <td class="py-4 px-6 whitespace-nowrap text-gray-700">Machine Learning</td>
+                                <td class="py-4 px-6 whitespace-nowrap text-gray-700">35</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors duration-200">
+                                <td class="py-4 px-6 whitespace-nowrap text-gray-800">Instructor</td>
+                                <td class="py-4 px-6 whitespace-nowrap text-gray-700">Port City International University</td>
+                                <td class="py-4 px-6 whitespace-nowrap text-gray-700">Artificial Intelligence</td>
+                                <td class="py-4 px-6 whitespace-nowrap text-gray-700">65</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors duration-200">
+                                <td class="py-4 px-6 whitespace-nowrap text-gray-800">Instructor</td>
+                                <td class="py-4 px-6 whitespace-nowrap text-gray-700">Port City International University</td>
+                                <td class="py-4 px-6 whitespace-nowrap text-gray-700">Computer Networks</td>
+                                <td class="py-4 px-6 whitespace-nowrap text-gray-700">60</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h3 class="text-3xl font-bold text-center text-gray-900 mt-16 mb-10">Seminars Conducted</h3>
+                <div class="space-y-6 max-w-4xl mx-auto">
+                    <div class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-indigo-500 transform hover:scale-[1.01] transition-transform duration-300">
+                        <h4 class="font-semibold text-2xl text-gray-800 mb-3">Seminar on ITEE</h4>
+                        <p class="text-gray-700 text-lg">Conducted a 1-hour seminar on effective preparation strategies, question pattern analysis, and success tips for the highly competitive ITEE exam.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-purple-500 transform hover:scale-[1.01] transition-transform duration-300">
+                        <h4 class="font-semibold text-2xl text-gray-800 mb-3">EDU Thesis Guidelines</h4>
+                        <p class="text-gray-700 text-lg">Conducted a 2-hour seminar at East Delta University to provide guidelines on writing a thesis paper effectively.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 md:py-32 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-16">Technical Skills</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                    <!-- Skill Card: Programming Languages -->
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center">
+                        <i class="fas fa-laptop-code text-5xl text-blue-600 mb-6"></i>
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Programming Languages</h3>
+                        <ul class="space-y-3 text-gray-700 text-lg w-full">
+                            <li class="flex items-center justify-center"><i class="fas fa-check-circle text-green-500 mr-3"></i>Python</li>
+                            <li class="flex items-center justify-center"><i class="fas fa-check-circle text-green-500 mr-3"></i>C</li>
+                            <li class="flex items-center justify-center"><i class="fas fa-check-circle text-green-500 mr-3"></i>C++</li>
+                            <li class="flex items-center justify-center"><i class="fas fa-check-circle text-green-500 mr-3"></i>Java</li>
+                        </ul>
+                    </div>
+                    <!-- Skill Card: Frameworks & Libraries -->
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center">
+                        <i class="fas fa-cubes text-5xl text-purple-600 mb-6"></i>
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Frameworks & Libraries</h3>
+                        <ul class="space-y-3 text-gray-700 text-lg w-full">
+                            <li class="flex items-center justify-center"><i class="fas fa-check-circle text-green-500 mr-3"></i>PyTorch</li>
+                            <li class="flex items-center justify-center"><i class="fas fa-check-circle text-green-500 mr-3"></i>Apache Spark</li>
+                            <li class="flex items-center justify-center"><i class="fas fa-check-circle text-green-500 mr-3"></i>Apache Hadoop</li>
+                            <li class="flex items-center justify-center"><i class="fas fa-check-circle text-green-500 mr-3"></i>Django</li>
+                            <li class="flex items-center justify-center"><i class="fas fa-check-circle text-green-500 mr-3"></i>PySpark</li>
+                        </ul>
+                    </div>
+                    <!-- Skill Card: Tools & Technologies -->
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center">
+                        <i class="fas fa-tools text-5xl text-red-600 mb-6"></i>
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Tools & Technologies</h3>
+                        <ul class="space-y-3 text-gray-700 text-lg w-full">
+                            <li class="flex items-center justify-center"><i class="fas fa-check-circle text-green-500 mr-3"></i>LaTeX (Article Writing)</li>
+                            <li class="flex items-center justify-center"><i class="fas fa-check-circle text-green-500 mr-3"></i>Linux (Operating System)</li>
+                            <li class="flex items-center justify-center"><i class="fas fa-check-circle text-green-500 mr-3"></i>Git & GitHub</li>
+                            <li class="flex items-center justify-center"><i class="fas fa-check-circle text-green-500 mr-3"></i>VS Code</li>
+                        </ul>
+                    </div>
+                    <!-- Skill Card: Academic & Research Coursework -->
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center">
+                        <i class="fas fa-book-reader text-5xl text-orange-600 mb-6"></i>
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Academic Coursework</h3>
+                        <ul class="space-y-3 text-gray-700 text-lg w-full">
+                            <li class="flex items-center justify-center"><i class="fas fa-check-circle text-green-500 mr-3"></i>Deep Learning Specialization</li>
+                            <li class="flex items-center justify-center"><i class="fas fa-check-circle text-green-500 mr-3"></i>Machine Learning</li>
+                            <li class="flex items-center justify-center"><i class="fas fa-check-circle text-green-500 mr-3"></i>Intermediate Python for Data Science</li>
+                            <li class="flex items-center justify-center"><i class="fas fa-check-circle text-green-500 mr-3"></i>Intro to Big Data and Hadoop</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 md:py-32 bg-gradient-to-br from-indigo-700 to-purple-800 text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold mb-10">Connect With Me</h2>
+                <p class="text-xl md:text-2xl font-light mb-12 max-w-3xl mx-auto">
+                    I am eager to connect with professors and researchers for potential PhD positions and collaborative projects. Please feel free to reach out to discuss my research interests, academic background, or any opportunities.
+                </p>
+                <a href="mailto:sabbir.shantocse@gmail.com" class="bg-white text-indigo-700 px-10 py-4 rounded-full shadow-xl hover:bg-gray-100 hover:scale-105 transition-all duration-300 font-bold text-lg inline-flex items-center group">
+                    <i class="fas fa-envelope mr-3 text-2xl group-hover:text-indigo-900 transition-colors duration-300"></i> Send Me A Message
+                </a>
+                <div class="mt-16 flex justify-center space-x-8">
+                    <a href="https://github.com/mdsabbirahsan" target="_blank" class="text-white hover:text-gray-300 transition-colors duration-300 text-4xl"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/sabbir-al-ahsan" target="_blank" class="text-white hover:text-gray-300 transition-colors duration-300 text-4xl"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" target="_blank" class="text-white hover:text-gray-300 transition-colors duration-300 text-4xl"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank" class="text-white hover:text-gray-300 transition-colors duration-300 text-4xl"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-10 text-center">
+        <div class="container mx-auto px-6">
+            <p class="text-lg">&copy; 2025 Md. Sabbir Al Ahsan. All rights reserved.</p>
+            <p class="text-sm text-gray-400 mt-2">Designed with <i class="fas fa-heart text-red-500 mx-1"></i> and Code.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+        });
+
+        closeMobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+
+        // Close mobile menu when a link is clicked (delegated to the menu itself)
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Optional: Add a subtle animation to sections on scroll
+        const sections = document.querySelectorAll('section');
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15 // Trigger when 15% of the section is visible
+        };
+
+        const sectionObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.querySelectorAll('.animate-fade-in-up').forEach(element => {
+                        element.style.animationPlayState = 'running';
+                    });
+                    observer.unobserve(entry.target); // Stop observing once animated
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            section.querySelectorAll('.animate-fade-in-up').forEach(element => {
+                element.style.animationPlayState = 'paused'; // Pause animation initially
+            });
+            sectionObserver.observe(section);
+        });
+    </script>
+</body>
+</html>
